@@ -1,0 +1,34 @@
+<!--  -->
+<h2>Text Interpolation</h2>
+<p>{{ message }}</p>
+
+<hr>
+<!--  -->
+<h2>Property Binding</h2>
+<img [src]="imgUrl" alt="Sample Image" />
+
+<hr>
+<!--  -->
+<h2>Style Binding</h2>
+<p [style.color]="titleColor" [style.fontSize]="titleSize">
+  This text uses dynamic style binding.
+</p>
+
+<hr>
+<!--  -->
+<h2>Class Binding</h2>
+<div [class.active-class]="isActive">
+  This div uses class binding.
+</div>
+
+<hr>
+<!--  -->
+<h2>Two-Way Data Binding</h2>
+<input type="text" [(ngModel)]="yourName" placeholder="Enter your name">
+<p>You typed: {{ yourName }}</p>
+
+<hr>
+<!--  -->
+<h2>Event Binding</h2>
+<button (click)="increment()">Click Me</button>
+<p>Click Count: {{ count }}</p>
