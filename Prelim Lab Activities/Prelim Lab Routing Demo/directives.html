@@ -1,0 +1,104 @@
+<!-- Static/Conditional Note Example -->
+<table>
+  <tr>
+    <td>
+      <h2 *ngIf="isStaticNoteVisible">This is a static note with true value!</h2>
+      <h2 *ngIf="!isStaticNoteVisible">This static note has false value.</h2>
+    </td>
+  </tr>
+</table>
+
+<!-- Toggle Note Example -->
+<table>
+  <tr>
+    <td>
+      <p *ngIf="isNotVisible">This is a note!</p>
+    </td>
+    <td>
+      <button (click)="showNote()">Show Note</button>
+    </td>
+    <td>
+      <button (click)="hideNote()">Hide Note</button>
+    </td>
+  </tr>
+</table>
+
+<!-- Toggle Paragraph Visibility -->
+<table>
+  <tr>
+    <td>
+      <button (click)="toggleNote()">
+        {{ isParagraphVisible ? 'Hide' : 'Show' }}
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p *ngIf="isParagraphVisible">This is the paragraph content.</p>
+    </td>
+  </tr>
+</table>
+
+<!-- Static Month Example -->
+<table>
+  <tr>
+    <td>
+      <p *ngIf="monthNameStatic === 'Jan'">January</p>
+      <p *ngIf="monthNameStatic === 'Feb'">February</p>
+      <p *ngIf="monthNameStatic === 'Mar'">March</p>
+    </td>
+  </tr>
+</table>
+
+<!-- Dynamic Month with Input -->
+<table>
+  <tr>
+    <td>
+      <p *ngIf="monthNameDynamic === 'Jan'">January</p>
+      <p *ngIf="monthNameDynamic === 'Feb'">February</p>
+      <p *ngIf="monthNameDynamic === 'Mar'">March</p>
+      <p *ngIf="monthNameDynamic !== 'Jan' && monthNameDynamic !== 'Feb' && monthNameDynamic !== 'Mar'">
+        Wrong input!
+      </p>
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="monthNameDynamic">
+    </td>
+  </tr>
+</table>
+
+<!-- Loop through a List of Cities -->
+<table>
+  <tr>
+    <td>
+      <ul>
+        <li *ngFor="let city of cityList; let i = index">
+          {{ city }}
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<!-- Loop through Student List with Active Status -->
+<table>
+  <thead>
+    <tr>
+      <th>Student No</th>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentList; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ student.stud_name }}</td>
+      <td>{{ student.course }}</td>
+      <td>
+        <p *ngIf="student.isActive">Active</p>
+        <p *ngIf="!student.isActive">Inactive</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
